@@ -1,0 +1,3 @@
+buttonNewPropostal: '//*[@id="btSimulacao"]/div/div/div/div[3]/div'
+buttonProposalInApprovation: "#btSituacaoProposta > div > div > div > div.botoesMenuImagem > div"
+  

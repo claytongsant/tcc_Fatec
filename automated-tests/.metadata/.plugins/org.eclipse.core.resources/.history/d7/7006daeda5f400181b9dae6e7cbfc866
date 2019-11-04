@@ -1,0 +1,3 @@
+fieldLogin: "codigoLogin"
+fieldPassword: "codigoSenha"
+buttonAccess: "#btConfirmar > table > tbody > tr > td > div"

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.tcc.fatec.factory&apos; to &apos;Fatec-Tcc-tests-No_Page_Object/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;Fatec-Tcc-tests-Page_Object&apos;&#x0D;&#x0A;- Destination element: &apos;Fatec-Tcc-tests-No_Page_Object/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;Fatec-Tcc-tests-Page_Object/src/main/java/com.tcc.fatec.factory&apos;" description="Copy package" destination="=Fatec-Tcc-tests-No_Page_Object/src\/main\/java" element1="/src\/main\/java&lt;com.tcc.fatec.factory" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1572800198388" version="1.0"/>
+</session>

@@ -1,0 +1,55 @@
+package com.tcc.fatec.factory;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriverService;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+public class WebDriverFactory {
+    private static final String PHANTOMJS = "/webdrivers/phantomjs.exe";
+    private static final String CHROMEDRIVER = "/webdrivers/chromedriver.exe";
+
+   // public static final String BROWSERSTACK_USR = "renangabriel1";
+   // public static final String BROWSERSTACK_KEY = "4f8ZJhnqfa1WStp7fPY5";
+   // public static final String BROWSERSTACK_URL = "https://" + BROWSERSTACK_USR + ":" + BROWSERSTACK_KEY + "@hub-cloud.browserstack.com/wd/hub";	
+
+    public WebDriver chromeWebDriver() {
+        System.setProperty("webdriver.chrome.driver", WebDriverFactory.class.getResource(CHROMEDRIVER).getPath());
+        return new ChromeDriver();
+    }
+
+    public WebDriver chromeWebDriver(DesiredCapabilities caps) {
+        return new ChromeDriver(caps);
+    }	
+
+    public WebDriver phantomJSWebDriver() {
+        DesiredCapabilities caps = new DesiredCapabilities();
+       caps.setCapability(PhantomJSDriverService.PHANTOMJS_EXECUTABLE_PATH_PROPERTY,
+                WebDriverFactory.class.getResource(PHANTOMJS).getPath());
+        return new PhantomJSDriver(caps);
+    }
+
+    public RemoteWebDriver browserStackRemoteWebDriver() {
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("browser", "Chrome");
+        caps.setCapability("browser_version", "58.0");
+        caps.setCapability("os", "Windows");
+        caps.setCapability("os_version", "10");
+        caps.setCapability("resolution", "1366x768");
+        caps.setCapability("browserstack.debug", "true");
+        caps.setCapability("browserstack.local", "false");
+        
+        try {
+            return new RemoteWebDriver(new URL(BROWSERSTACK_URL), caps);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+            throw new RuntimeException();
+        }
+    }
+
+}

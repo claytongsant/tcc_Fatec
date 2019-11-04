@@ -1,0 +1,79 @@
+package com.viverebrasil.financeira.auto;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+
+import com.viverebrasil.financeira.factory.WebDriverFactory;
+import com.viverebrasil.financeira.pageobject.portal.client.ClientLoginPage;
+import com.viverebrasil.financeira.pageobject.portal.client.ClientPanelPage;
+
+public class ClientPvConsultProposalRegressionTest {
+
+	private WebDriver driver;
+	private ClientLoginPage loginPage;
+	private ClientPanelPage panelPage;
+
+	@Before
+	public void setUp() {
+		WebDriverFactory webDriverFactory = new WebDriverFactory();
+		this.driver = webDriverFactory.chromeWebDriver();
+		this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		this.driver.manage().window().maximize();
+		driver.navigate().to("https://viverebrasil.com.br/portalclientepro/#/login");
+	}
+
+	/*
+	 * 1.2.1 -Funcionalidade : consultar proposta.
+	 * Condições de teste
+	 * Validar que  o Portal Cliente Santander  deve apresentar os dados de uma proposta ,
+	 *  após consultarmos uma proposta existente de um cliente PF.
+	 * Resultado esperado.
+	 * Validação realizada com sucesso a proposta foi  consultada com sucesso
+
+	 * Gonçalves Date: 14/03/2018
+	 */
+
+	@Test
+	public void consultProposalPf() {
+		loginPage = new ClientLoginPage(driver);
+		String a = "34217788681";
+		String b = "!QAZ2wsx";
+		Assert.assertEquals(true, loginPage.isIdentificationPage());
+		panelPage = loginPage.logar(a, b);
+		Assert.assertEquals(true, panelPage.isClientPanelPage());
+		panelPage.clickMyCadastre();
+	}
+
+	/*
+	 * 1.2.1 -Funcionalidade : consultar proposta.
+	 * Condições de teste
+	 * Validar que  o Portal Cliente Santander  deve apresentar os dados de uma proposta ,
+	 *  após consultarmos uma proposta existente de um cliente PJ.
+	 * Resultado esperado.
+	 * Validação realizada com sucesso a proposta foi  consultada com sucesso
+
+	 * Gonçalves Date: 14/03/2018
+	 */
+
+	@Test
+	public void consultProposalPj() {
+		String a = "36226585846";
+		String b = "!QAZ2wsx";
+		loginPage = new ClientLoginPage(driver);
+		loginPage.isIdentificationPage();
+		panelPage = loginPage.logar(a, b);
+		panelPage.clickProposal();
+	}
+
+	@After
+	public void tearDown() {
+		//driver.quit();
+	}
+
+}

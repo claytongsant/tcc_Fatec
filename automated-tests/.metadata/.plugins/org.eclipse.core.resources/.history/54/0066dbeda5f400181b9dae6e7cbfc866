@@ -1,0 +1,5 @@
+radioByNumber: "#blocoPROPOSTA > fieldset:nth-child(2) > table > tbody > tr > td:nth-child(1) > input"
+textFieldProposalNumber: "propostaID"
+buttonSearchPropostal: '#blocoSituacaoProposta > tbody > tr > td > div'
+buttonUpdateQueue: "#blocoAtualizarFilas > tbody > tr > td > div"
+radioInfoAutoManual: "#tabelaFASE > tbody > tr.acao_fase.zebraDois > td.conteudoPropEmp > input.radio"

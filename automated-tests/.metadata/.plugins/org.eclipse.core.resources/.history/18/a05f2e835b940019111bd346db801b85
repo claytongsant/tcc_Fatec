@@ -1,0 +1,78 @@
+package com.tcc.fatec.pageobject;
+
+import java.io.File;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import com.tcc.fatec.elements.FormularioCadastrarLivroPageData;
+import com.tcc.fatec.utils.FileDataProvider;
+
+
+public class FormularioLivro extends BasePage {
+	
+	private FormularioCadastrarLivroPageData elementsData;
+	
+public FormularioLivro (WebDriver driver){
+	super(driver);
+	elementsData = FileDataProvider.setUpElementsData(new File 
+			(FormularioCadastrarLivroPageData.class.getResource(FormularioCadastrarLivroPageData.FILENAME).getPath()),
+			FormularioCadastrarLivroPageData.class);
+}
+
+public  boolean CadastrarLivro (){
+	wrapper.typeText(driver, By.name(elementsData.getFieldIsbn()),"1234");
+	wrapper.typeText(driver, By.name(elementsData.getFieldAutor()),"Franz Kafkta");
+	wrapper.typeText(driver, By.name(elementsData.getFieldTitulo()),"Metamorfose");
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));	
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Livro cadastrado com sucesso!");
+	
+}
+
+public boolean cadastrarIbsn(){
+	wrapper.typeText(driver, By.name(elementsData.getFieldIsbn()), "1234");
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Verifique os campos");
+}
+
+public boolean  cadastrarAutor (){
+	wrapper.typeText(driver, By.name(elementsData.getFieldAutor()), "Franz Kafkta");
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));	
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Verifique os campos!");
+}
+
+public boolean cadastarTitulo (){
+	wrapper.typeText(driver, By.name(elementsData.getFieldTitulo()), "Metamorfose");
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Verifique os campos!");
+	
+}
+public  boolean CadastrarIsbnMaisTitulo (){
+	wrapper.typeText(driver, By.name(elementsData.getFieldIsbn()), "1234");
+	wrapper.typeText(driver, By.name(elementsData.getFieldTitulo()), "Metamorfose");
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Livro cadastrado com sucesso!");
+}
+
+public  boolean CadastrarIsbnMaisAutor (){
+	wrapper.typeText(driver, By.name(elementsData.getFieldIsbn()), "1234");
+	wrapper.typeText(driver, By.name(elementsData.getFieldAutor()), "Franz Kafkta");
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Verifique os campos!");
+}
+
+public  boolean CadastrarTituloMaisAutor (){
+	wrapper.typeText(driver, By.name(elementsData.getFieldTitulo()), "Metamorfose");
+	wrapper.typeText(driver, By.name(elementsData.getFieldAutor()), "Franz Kafkta");
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Verifique os campos!");
+}
+
+public boolean CadastrarSemInserirDados (){
+	wrapper.click(driver, By.name(elementsData.getButtonSalvar()));
+	return wrapper.isTextEquals(driver, By.xpath("//span"), "Verifique os campos!");
+}
+	
+}
+
+

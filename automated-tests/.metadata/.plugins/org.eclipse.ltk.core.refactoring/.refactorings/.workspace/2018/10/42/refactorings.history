@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;fatec-tcc&apos;" deleteContents="false" description="Delete resource &apos;fatec-tcc&apos;" element1="/fatec-tcc" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1540039037601"/>
+</session>

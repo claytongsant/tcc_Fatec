@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.tcc.fatec.planilhas&apos; to &apos;com.viverebrasil.planilhas.janela&apos;&#x0D;&#x0A;- Original project: &apos;planilhas&apos;&#x0D;&#x0A;- Original element: &apos;planilhas/src/main/java/com.tcc.fatec.planilhas&apos;&#x0D;&#x0A;- Renamed element: &apos;planilhas/src/main/java/com.viverebrasil.planilhas.janela&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.tcc.fatec.planilhas&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.tcc.fatec.planilhas" name="com.viverebrasil.planilhas.janela" qualified="false" references="true" stamp="1559934073203" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,36 @@
+import static org.junit.Assert.assertTrue;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import com.tcc.fatec.factory.WebDriverFactory;
+
+public class CadastrarIsbnAndAutorTest {
+private WebDriver driver;
+	
+	@Test
+	public void cadastarInsbn() {
+		WebDriverFactory webDriverFactory = new WebDriverFactory();
+		this.driver = webDriverFactory.chromeWebDriver();
+		this.driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		this.driver.manage().window().maximize();
+		driver.navigate().to("https://scewebapp.herokuapp.com/cadastrarLivro");  
+	  WebElement isbn = driver.findElement(By.name("isbn"));
+	  isbn.sendKeys("1234");
+	  WebElement autor = driver.findElement(By.name("autor"));
+	  autor.sendKeys("1234");
+	  WebElement buttonSalvar = driver.findElement(By.name("salvar"));
+	  buttonSalvar.click();
+	  WebElement e =driver.findElement(By.xpath("//span"));
+	  boolean x;
+	  if(e.getText().equals("Verifique os campos!")) {
+		x = true;
+		}else {
+	    x =false ;}
+	  assertTrue("1", x);
+	  
+}
+}

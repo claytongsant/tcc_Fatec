@@ -1,0 +1,4 @@
+radioDoc: "#participanteBODY > tr > td:nth-child(1) > div > input"
+buttonDocAnalise: "#botaoAnalisar > div"
+radioApproveWithRestriction: "#radioSituacaoAprovadoRestricao"
+buttonConfirm: "botaoContinuar" 

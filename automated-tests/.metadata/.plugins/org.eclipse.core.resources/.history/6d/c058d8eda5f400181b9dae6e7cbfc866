@@ -1,0 +1,5 @@
+tabBuyer: "tituloComprador"
+docTables: "tabelasDocs"
+row: "tbody/tr"
+radioApproverd: '//*[@id="divAcao"]/fieldset[2]/table[1]/tbody/tr/td[1]/div/table/tbody/tr/td[1]'
+buttonConfirm: "btFinalizar"

@@ -1,0 +1,5 @@
+restrictionsTable: '//*[@id="tbGridItens"]/tbody'
+restrictionTableLine: "tr"
+radio: 'td[1]'
+buttonFinish: '#divAguarde > table > tbody > tr > td > div.rodapeTelas > table > tbody > tr > td > a:nth-child(2) > table > tbody > tr > td > div'
+restrictionText: 'td[2]'
